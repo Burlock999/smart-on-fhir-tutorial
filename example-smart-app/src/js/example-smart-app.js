@@ -26,10 +26,7 @@
 
         
         var alint = smart.patient.api.fetchAll({
-                type: 'AllergyIntolerance',
-                    query: {
-                      clinicalStatus: 'active'  
-                    }
+                type: 'AllergyIntolerance'
         });
         
         console.log('AllergyIntolerance', alint);
