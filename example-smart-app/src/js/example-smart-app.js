@@ -2,13 +2,14 @@
   window.extractData = function() {
     var ret = $.Deferred();
 
+
     function onError() {
       console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
-      console.log(obv);
+ 
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -30,9 +31,11 @@
                       clinicalStatus: {'active'}                      }
         });
         
+        console.log('AllergyIntolerance', alint);
+        
         $.when(pt, obv, alint).fail(onError);
 
-        $.when(pt, obv, alint).done(function(patient, obv) {
+        $.when(pt, obv, alint).done(function(patient, obv, alint) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -116,6 +119,11 @@
     });
 
     return getQuantityValueAndUnit(formattedBPObservations[0]);
+  }
+  
+
+    
+
   }
 
   function getQuantityValueAndUnit(ob) {
