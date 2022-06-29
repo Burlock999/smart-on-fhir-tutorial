@@ -125,8 +125,9 @@
   function getAllergyIntolerances(AllInts, textValue) {
     var formattedAllInts = [];
     AllInts.forEach(function(alint){
-      formattedAllInts.push(alint.component.find(function(component))
-                                                 ;
+      formattedAllInts.push(alint.component.find(function(component){
+          return component.code
+                                                 ;}
                                              };
                                                  }      
 
