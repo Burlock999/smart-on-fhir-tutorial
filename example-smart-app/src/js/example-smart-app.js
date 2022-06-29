@@ -35,11 +35,14 @@
               type: 'QuestionnaireResponse'
         });
         
-        console.log( qr);
+       
         
         $.when(pt, obv, alint).fail(onError);
 
         $.when(pt, obv, alint).done(function(patient, obv, alint) {
+          
+           console.log( qr);
+          
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
