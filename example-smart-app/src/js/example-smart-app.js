@@ -27,7 +27,7 @@
         var alint = smart.patient.api.fetchAll({
                 type: 'AllergyIntolerance',
                 query: {
-                    clinical-status: {
+                    'clinical-status': {
                         'active'
                       }
                 }
