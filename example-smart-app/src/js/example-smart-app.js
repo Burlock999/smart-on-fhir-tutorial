@@ -31,6 +31,12 @@
         
         console.log('AllergyIntolerance', alint);
         
+        var qr = smart.patient.api.fetchAll({
+              type: 'QuestionnaireResponse'
+        });
+        
+        console.log('QuestionnaireResponse', qr);
+        
         $.when(pt, obv, alint).fail(onError);
 
         $.when(pt, obv, alint).done(function(patient, obv, alint) {
