@@ -77,7 +77,7 @@
           
           for(var qr_element = 0; qr_element < qr.length; qr_element++)
           {
-            qr_table += "<tr>" + "<td>" + qr.item.text + "</td></tr>"; 
+            qr_table += "<tr>" + "<td>" + qr[qr_element].item.text + "</td></tr>"; 
           }
           
           qr_table += "</table>";
