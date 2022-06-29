@@ -66,12 +66,21 @@
           
           var ai_table = "<table>";
           
+          var qr_table = "<table>";
+          
           for (var ai_element = 0; ai_element < alint.length; ai_element++)
           {
               ai_table = ai_table + "<tr>" + "<td>" + alint[ai_element].code.text + "</td></tr>";
           }
           
           ai_table += "</table>";
+          
+          for(var qr_element = 0; qr_element < qr.length; qr_element++)
+          {
+            qr_table += "<tr>" + "<td>" + qr.item.text + "</td></tr>"; 
+          }
+          
+          qr_table += "</table>";
               
           p.birthdate = patient.birthDate;
           p.gender = gender;
@@ -93,6 +102,7 @@
           p.temp = getQuantityValueAndUnit(temp[0]);
 
           p.ai = ai_table;
+          p.qr = qr_table;
           
           ret.resolve(p);
         });
@@ -119,6 +129,7 @@
       hdl: {value: ''},
       temp: {value: ''},
       ai: {value: ''},
+      qr: {value: ''},
       
       
       
@@ -171,6 +182,7 @@
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
     $('#ai').html(p.ai);
+    $('#qr').html(p.qr);
   };
 
 })(window);
