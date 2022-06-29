@@ -122,7 +122,13 @@
 
     
 
-  }
+  function getAllergyINtolerances(AllInts, textValue) {
+    var formattedAllInts = []'
+    AllInts.forEach(function(alint){
+      formattedAllInts.push(alint.component.find(function(component))
+                                                 ;
+                                             };
+                                                 }      
 
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
