@@ -37,9 +37,9 @@
         
        
         
-        $.when(pt, obv, alint).fail(onError);
+        $.when(pt, obv, alint, qr).fail(onError);
 
-        $.when(pt, obv, alint).done(function(patient, obv, alint) {
+        $.when(pt, obv, alint, qr).done(function(patient, obv, alint, qr) {
           
            console.log( qr);
           
