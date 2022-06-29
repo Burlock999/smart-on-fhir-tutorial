@@ -29,13 +29,13 @@
                 type: 'AllergyIntolerance'
         });
         
-        console.log('AllergyIntolerance', alint);
+        console.log(alint);
         
         var qr = smart.patient.api.fetchAll({
               type: 'QuestionnaireResponse'
         });
         
-        console.log('QuestionnaireResponse', qr);
+        console.log( qr);
         
         $.when(pt, obv, alint).fail(onError);
 
