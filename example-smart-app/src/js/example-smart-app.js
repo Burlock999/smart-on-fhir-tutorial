@@ -54,6 +54,16 @@
           var temp = byCodes('8310-5');
 
           var p = defaultPatient();
+          
+          var ai_table = "<table>";
+          
+          for (var ai_element = 0; ai_element < alint.length; ai_element++)
+          {
+              ai_table = ai_table + "<tr>" + "<td>" + alint[ai_element].code.text + "</td></tr>";
+          }
+          
+          ai_table += "</table>";
+              
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
@@ -73,7 +83,7 @@
           
           p.temp = getQuantityValueAndUnit(temp[0]);
 
-
+          p.ai = ai_table;
           
           ret.resolve(p);
         });
@@ -99,6 +109,10 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temp: {value: ''},
+      ai: {value: ''},
+      
+      
+      
     };
   }
 
@@ -121,15 +135,7 @@
   
 
     
-
-  function getAllergyIntolerances(AllInts, textValue) {
-    var formattedAllInts = [];
-    AllInts.forEach(function(alint){
-      formattedAllInts.push(alint.component.find(function(component){
-          return component.code
-                                                 ;}
-                                             };
-                                                 }      
+    
 
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
@@ -155,6 +161,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
+    $('#ai').html(p.ai);
   };
 
 })(window);
